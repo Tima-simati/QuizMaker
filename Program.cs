@@ -16,6 +16,7 @@
             {
                 Console.Write($"{i} ");
             }
+            Question secondQuesiton = new Question();
         }
     }
 }

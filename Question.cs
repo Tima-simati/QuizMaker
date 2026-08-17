@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QuizMaker
 {
-    internal class Question
+    public class Question
     {
         public string question;
         public List<string> possibleOptions = new List<string>();
