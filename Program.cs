@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            var QuizList = new List<Question>();    
+            var QuizList = new List<Question>();
 
             Question firstQuesiton = new Question();
             firstQuesiton.question = "What is the highest mountain in the world?";
@@ -32,7 +32,12 @@
             QuizList.Add(firstQuesiton);
             QuizList.Add(secondQuesiton);
 
-            QuizStorage.StoreQuestion(QuizList);
+            //QuizStorage.StoreQuestion(QuizList);
+            QuizList = QuizStorage.ReadQuestion(QuizList);
+            foreach (string i in QuizList[0].possibleOptions)
+            {
+                Console.WriteLine($"{i} ");
+            }
         }
     }
 }
