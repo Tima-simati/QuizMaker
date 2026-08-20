@@ -8,7 +8,7 @@ using System.IO;
 
 namespace QuizMaker
 {
-    internal class QuizStorage
+    internal class Logic
     {
         public static XmlSerializer serializer = new XmlSerializer(typeof(List<Question>));
 
@@ -29,5 +29,6 @@ namespace QuizMaker
                 return quizlist;
             }
         }
+
     }
 }
