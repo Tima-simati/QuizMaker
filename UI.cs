@@ -15,22 +15,34 @@ namespace QuizMaker
                 Console.WriteLine($"{i} ");
             }
         }
+        /// <summary>
+        /// asks user which mode he wants to use:
+        /// Create questions
+        /// or play the quiz
+        /// </summary>
+        /// <returns>mode: add question or play quiz</returns>
         public static int AskUserWhatModeToUse()
         {
             Console.WriteLine($"What mode to you want to use?\nPress {(int)Enums.Mode.ExpandQuizDatabase} for creating more questions for the quiz.");
             Console.WriteLine($"Or press {(int)Enums.Mode.PlayQuiz} to play the quiz game");
             int.TryParse(Console.ReadLine(), out int mode);
-            while(mode != 1 && mode!= 2)
+            while (mode != (int)Enums.Mode.ExpandQuizDatabase && mode != (int)Enums.Mode.PlayQuiz)
             {
                 Console.WriteLine($"Mode not found. Please press only {(int)Enums.Mode.ExpandQuizDatabase} or {(int)Enums.Mode.PlayQuiz}");
                 int.TryParse(Console.ReadLine(), out mode);
-                if (mode == 1 || mode == 2)
+                if (mode == (int)Enums.Mode.ExpandQuizDatabase || mode == (int)Enums.Mode.ExpandQuizDatabase)
                 {
                     break;
                 }
             }
             return mode;
         }
+        /// <summary>
+        /// method to ask user to state a question.
+        /// choose possible answer options and
+        /// mark the right answers
+        /// </summary>
+        /// <returns>Question object</returns>
         public static Question CreateQuestion()
         {
             Question newQuestion = new Question();
@@ -57,7 +69,7 @@ namespace QuizMaker
                     continue;
                 }
                 if (countOptions >= AT_LEAST_NEEDED_OPTIONS && continueWithAddingOption != "y")
-                {                                    
+                {
                     wantToAddOtherOption = false;
                 }
             }
@@ -79,6 +91,18 @@ namespace QuizMaker
                 }
             }
             return newQuestion;
+        }
+        /// <summary>
+        /// ask user, if he wants to add another questions in the mode ExpandQuizDatabase
+        /// </summary>
+        /// <returns>bool value for continue</returns>
+        public static bool AskUserToAddAnotherQuestion()
+        {
+            bool choice = true;
+            Console.WriteLine("Do you want to add another question to the database?\nPress y or n.");
+            string choiceToAddOtherQuestions = Console.ReadLine();
+            choice = choiceToAddOtherQuestions == "y" ? true : false;
+            return choice;
         }
     }
 }

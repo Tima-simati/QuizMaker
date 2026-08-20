@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfQuestion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Question>
-    <question>asdf</question>
+    <question>What is highest building in the world?</question>
     <possibleOptions>
-      <string>1</string>
-      <string>nn</string>
-      <string>2</string>
+      <string>Burj Khalifa</string>
+      <string>Petronas Towers</string>
+      <string>Taipeh 101</string>
     </possibleOptions>
     <answer>
-      <string>2</string>
+      <string>Burj Khalifa</string>
+    </answer>
+  </Question>
+  <Question>
+    <question>What is the longest river in the world?</question>
+    <possibleOptions>
+      <string>Nile</string>
+      <string>Amazonas</string>
+      <string>Danube</string>
+      <string>Wolga</string>
+      <string>Thames</string>
+    </possibleOptions>
+    <answer>
+      <string>Nile</string>
     </answer>
   </Question>
 </ArrayOfQuestion>
