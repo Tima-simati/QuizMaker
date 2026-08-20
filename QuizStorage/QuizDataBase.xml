@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfQuestion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Question>
-    <question>What is grey and big?</question>
+    <question>asdf</question>
     <possibleOptions>
-      <string>donkey</string>
-      <string>elephant</string>
-      <string>cat</string>
+      <string>1</string>
+      <string>nn</string>
+      <string>2</string>
     </possibleOptions>
     <answer>
-      <string>elephant</string>
+      <string>2</string>
     </answer>
   </Question>
 </ArrayOfQuestion>

@@ -6,8 +6,22 @@
         {
             //create list to store alle the quiz questions
             var QuizList = new List<Question>();
-            QuizList.Add(UI.CreateQuestion());
-            Logic.StoreQuestion(QuizList);
+            int mode = 0; //init of mode var
+
+            //ask user which mode to use: create questions for quizdatabase
+            //or play the quiz
+
+            mode = UI.AskUserWhatModeToUse();
+            if (mode == (int)Enums.Mode.ExpandQuizDatabase)
+            {
+                QuizList.Add(UI.CreateQuestion());
+                Logic.StoreQuestion(QuizList);
+            }
+
+            
+
+
+
             ////testing block start
             //Question firstQuesiton = new Question();
             //firstQuesiton.question = "What is the highest mountain in the world?";
