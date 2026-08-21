@@ -5,15 +5,22 @@ using System.Text;
 namespace QuizMaker
 {
     public class UI
-    {
-        public const int AT_LEAST_NEEDED_OPTIONS = 3;
+    {        
         public static void PrintQuestion(Question question)
         {
+            int indexOfList = 0;
             Console.WriteLine(question.question);
             foreach (string i in question.possibleOptions)
             {
                 Console.WriteLine($"{i} ");
+                
             }
+            foreach (string i in question.possibleOptions)
+            {                
+                Console.Write($"Press {indexOfList} for {i}, ");
+                indexOfList++;
+            }
+            
         }
         /// <summary>
         /// asks user which mode he wants to use:
@@ -63,12 +70,12 @@ namespace QuizMaker
                 {
                     continue;
                 }
-                if (continueWithAddingOption != "y" && countOptions < AT_LEAST_NEEDED_OPTIONS)
+                if (continueWithAddingOption != "y" && countOptions < Constants.AT_LEAST_NEEDED_OPTIONS)
                 {
                     Console.WriteLine("You need at least 3 options for that questions. Add another one");
                     continue;
                 }
-                if (countOptions >= AT_LEAST_NEEDED_OPTIONS && continueWithAddingOption != "y")
+                if (countOptions >= Constants.AT_LEAST_NEEDED_OPTIONS && continueWithAddingOption != "y")
                 {
                     wantToAddOtherOption = false;
                 }

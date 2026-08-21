@@ -12,18 +12,16 @@ namespace QuizMaker
     {
         public static XmlSerializer serializer = new XmlSerializer(typeof(List<Question>));
 
-        public static void StoreQuestion(List<Question> quizlist)
+        public static void StoreQuestionsToQuizDataBaseFile(List<Question> quizlist)
         {
-            var path = @"C:\Users\Timur\source\repos\QuizMaker\QuizStorage\QuizDataBase.xml";
-            using (FileStream file = File.Create(path))
+            using (FileStream file = File.Create(Constants.DATABASE_PATH))
             {
                 serializer.Serialize(file, quizlist);
             }
         }
-        public static List<Question> ReadQuestion(List<Question> quizlist)
+        public static List<Question> LoadQuestionsFromQuizDatabaseFile(List<Question> quizlist)
         {
-            var path = @"C:\Users\Timur\source\repos\QuizMaker\QuizStorage\QuizDataBase.xml";
-            using (FileStream file = File.OpenRead(path))
+            using (FileStream file = File.OpenRead(Constants.DATABASE_PATH))
             {
                 quizlist = serializer.Deserialize(file) as List<Question>;
                 return quizlist;

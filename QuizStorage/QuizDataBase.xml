@@ -24,4 +24,15 @@
       <string>Nile</string>
     </answer>
   </Question>
+  <Question>
+    <question>What is fromage in french?</question>
+    <possibleOptions>
+      <string>a kind of form</string>
+      <string>tapestry</string>
+      <string>cheese</string>
+    </possibleOptions>
+    <answer>
+      <string>cheese</string>
+    </answer>
+  </Question>
 </ArrayOfQuestion>
